@@ -1,0 +1,378 @@
+/* ==============================================================
+   FYNN'S PORTFOLIO - SHARED STYLESHEET
+   Every page links to this one file, so a change here updates
+   the whole site at once.
+
+   Quick map of this file:
+     1. Colours & rounding  (edit these to re-theme everything)
+     2. Base styles
+     3. Top navigation bar
+     4. Homepage hero banner   <- YOUR BANNER IMAGE LIVES HERE
+     5. Sections & headings
+     6. Buttons
+     7. Project cards
+     8. Experience & education rows
+     9. About page
+    10. Skills tags
+    11. Footer
+    12. Phones & accessibility
+   ============================================================== */
+
+
+/* ---- 1. Colours & rounding ---- */
+:root {
+  --paper: #ffffff;        /* page background */
+  --paper-soft: #f4f5f7;   /* light grey band behind some sections */
+  --ink: #16171d;          /* headings, near-black */
+  --body-text: #41434c;    /* paragraph text */
+  --muted: #6f727e;        /* secondary text */
+  --navy: #1f2b4d;         /* buttons, links, highlights */
+  --navy-dark: #141c33;    /* button hover + hero fallback colour */
+  --line: #e6e7ec;         /* hairline borders */
+  --radius: 18px;          /* rounded corners on cards */
+}
+
+
+/* ---- 2. Base styles ---- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+/* The centred column that most content sits inside. */
+.wrap { width: min(1060px, 100% - 48px); margin-inline: auto; }
+
+
+/* ---- 3. Top navigation bar ----
+   The nav is copied into every page. If you change a link here
+   in one HTML file, make the same change in all five files. */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding: 16px 0;
+}
+.wordmark {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px 26px; }
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.nav-links a:hover { color: var(--navy); }
+/* The page you are currently on gets class="active" in the HTML. */
+.nav-links a.active {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 2px;
+}
+
+
+/* ---- 4. Homepage hero banner ----
+   YOUR BANNER IMAGE GOES HERE.
+   Drop a wide image into the "images" folder and name it
+   banner.jpg (or change the file name in the url(...) below).
+   Until the file exists, the hero shows a deep navy backdrop
+   instead, so nothing ever looks broken.
+   The dark gradient layered on top keeps the white text
+   readable over any photo. */
+.hero {
+  width: min(100% - 24px, 1560px);
+  margin: 20px auto 0;
+  min-height: clamp(340px, 58vh, 600px);
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 48px 24px;
+  color: #ffffff;
+  background-color: var(--navy-dark);
+  background-image:
+    linear-gradient(rgba(10, 14, 28, 0.55), rgba(10, 14, 28, 0.35)),
+    url("images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.hero .kicker {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+.hero h1 {
+  margin-top: 10px;
+  font-size: clamp(2.6rem, 7.5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+
+/* ---- 5. Sections & headings ---- */
+.section { padding: 76px 0; }
+.section-soft { background: var(--paper-soft); }
+
+/* Small uppercase line above a heading, e.g. "Selected projects". */
+.eyebrow {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* Big centred headings, like "Summary" on the site you liked. */
+.section-title {
+  text-align: center;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.eyebrow + .section-title { margin-top: 10px; }
+
+/* Even bigger version, used as the main title on inner pages. */
+.page-title { font-size: clamp(2.3rem, 6vw, 3.3rem); }
+
+/* The sentence underneath a heading. */
+.section-sub {
+  text-align: center;
+  margin: 16px auto 0;
+  max-width: 62ch;
+  color: var(--body-text);
+}
+
+
+/* ---- 6. Buttons ---- */
+.btn-row {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: background 0.15s ease, color 0.15s ease,
+              border-color 0.15s ease, transform 0.15s ease;
+}
+.btn:hover { background: var(--navy-dark); transform: translateY(-1px); }
+
+/* Quieter version with just a border. */
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid #c9ccd6;
+}
+.btn-outline:hover {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+
+/* ---- 7. Project cards ---- */
+.project-grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(22, 23, 29, 0.08);
+}
+
+/* The image area at the top of each card. Works as a grey
+   placeholder <div> now, and as a real <img> once you swap one in. */
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: linear-gradient(135deg, #e9ebf1, #f6f7fa);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.card-body { padding: 20px 22px 24px; }
+.card-body h3 { font-size: 1.12rem; font-weight: 700; }
+.card-body p { margin-top: 6px; color: var(--muted); font-size: 0.96rem; }
+.card-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.card-link:hover { text-decoration: underline; }
+
+/* Centred "See all projects" style link under a section. */
+.center-link { margin-top: 36px; text-align: center; }
+.center-link a { color: var(--navy); font-weight: 700; text-decoration: none; }
+.center-link a:hover { text-decoration: underline; }
+
+
+/* ---- 8. Experience & education rows ---- */
+.xp-list { margin-top: 40px; }
+.xp {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 10px 32px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.xp:last-child { border-bottom: 1px solid var(--line); }
+.xp .dates { color: var(--navy); font-weight: 700; font-size: 0.95rem; }
+.xp .place { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+.xp h3 { font-size: 1.12rem; font-weight: 700; }
+.xp .xp-body {
+  margin-top: 6px;
+  color: var(--body-text);
+  font-size: 0.98rem;
+  max-width: 62ch;
+}
+
+
+/* ---- 9. About page ---- */
+.about-grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Portrait photo slot. Same trick as .thumb: grey placeholder
+   now, real photo later. */
+.portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  object-fit: cover;
+  background: linear-gradient(160deg, #e9ebf1, #f6f7fa);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.about-text p { color: var(--body-text); }
+.about-text p + p { margin-top: 16px; }
+
+
+/* ---- 10. Skills tags ---- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 28px;
+}
+.tags span {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.92rem;
+}
+
+/* Small centred note, used on the contact page. */
+.fineprint {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+
+/* ---- 11. Footer ---- */
+footer { border-top: 1px solid var(--line); margin-top: 40px; }
+.footer-inner {
+  padding: 30px 0 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-links a { color: var(--ink); text-decoration: none; font-weight: 500; }
+.footer-links a:hover { color: var(--navy); }
+
+
+/* ---- 12. Phones & accessibility ---- */
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 760px) {
+  .section { padding: 56px 0; }
+  .topbar-inner { justify-content: center; }
+  .project-grid { grid-template-columns: 1fr; }
+  .xp { grid-template-columns: 1fr; gap: 4px; padding: 22px 0; }
+  .xp .place { margin-bottom: 8px; }
+  .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .portrait { max-width: 340px; margin-inline: auto; }
+}
+
+/* Respect people who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .card:hover, .btn:hover { transform: none; }
+}

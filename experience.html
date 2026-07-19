@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience &amp; Education - Fynn [Last Name]</title>
+
+  <!-- The Poppins font. Needs internet; falls back to a system font without it. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVIGATION ============
+       Keep identical across all five pages. -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="wordmark" href="index.html">Fynn [Last Name]</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ PAGE TITLE ============ -->
+  <section class="section">
+    <div class="wrap">
+      <h1 class="section-title page-title">Experience &amp; Education</h1>
+      <p class="section-sub">
+        [One sentence framing your background, e.g. what kind of work you have
+        done and what you studied.]
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============
+       Each entry is one <article class="xp"> block.
+       To add another job, copy a whole block. Newest first. -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="xp-list">
+
+        <article class="xp">
+          <div>
+            <p class="dates">[Month Year] - Present</p>
+            <p class="place">[City, Country]</p>
+          </div>
+          <div>
+            <h3>[Company] - [Your Job Title]</h3>
+            <p class="xp-body">
+              [One or two lines on what you did and what came of it. Lead with
+              the result if you can.]
+            </p>
+          </div>
+        </article>
+
+        <article class="xp">
+          <div>
+            <p class="dates">[Month Year] - [Month Year]</p>
+            <p class="place">[City, Country]</p>
+          </div>
+          <div>
+            <h3>[Company] - [Your Job Title]</h3>
+            <p class="xp-body">
+              [One or two lines on what you did and what came of it.]
+            </p>
+          </div>
+        </article>
+
+        <article class="xp">
+          <div>
+            <p class="dates">[Month Year] - [Month Year]</p>
+            <p class="place">[City, Country]</p>
+          </div>
+          <div>
+            <h3>[Company] - [Your Job Title]</h3>
+            <p class="xp-body">
+              [One or two lines on what you did and what came of it.]
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============
+       Same block style as above. -->
+  <section class="section section-soft">
+    <div class="wrap">
+      <h2 class="section-title">Education</h2>
+
+      <div class="xp-list">
+
+        <article class="xp">
+          <div>
+            <p class="dates">[Year] - [Year]</p>
+            <p class="place">[City, Country]</p>
+          </div>
+          <div>
+            <h3>[School or University] - [Degree or Programme]</h3>
+            <p class="xp-body">
+              [Optional: focus areas, grade, thesis topic, or activities worth
+              mentioning. Delete this line if you do not need it.]
+            </p>
+          </div>
+        </article>
+
+        <article class="xp">
+          <div>
+            <p class="dates">[Year] - [Year]</p>
+            <p class="place">[City, Country]</p>
+          </div>
+          <div>
+            <h3>[School] - [Qualification]</h3>
+            <p class="xp-body">
+              [Optional extra line.]
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year"></span> Fynn [Last Name]</p>
+      <div class="footer-links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://github.com/yourusername">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

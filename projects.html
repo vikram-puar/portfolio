@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Fynn [Last Name]</title>
+
+  <!-- The Poppins font. Needs internet; falls back to a system font without it. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVIGATION ============
+       Keep identical across all five pages. -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="wordmark" href="index.html">Fynn [Last Name]</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ PAGE TITLE ============ -->
+  <section class="section">
+    <div class="wrap">
+      <h1 class="section-title page-title">Projects</h1>
+      <p class="section-sub">
+        [One line about what these projects have in common, or what you enjoy
+        building.]
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROJECT GRID ============
+       Each card is one <article class="card"> block; copy a whole
+       block to add a project.
+
+       To use a real photo, replace a <div class="thumb"> line with:
+       <img class="thumb" src="images/project-1.jpg" alt="[What the photo shows]">
+
+       The "View project" links can point to a GitHub repository, a
+       live site, a PDF, or anywhere else. -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="project-grid">
+
+        <article class="card">
+          <div class="thumb">[ Project image ]</div>
+          <div class="card-body">
+            <h3>[Project name]</h3>
+            <p>[One or two lines: what it is, what you did, and what it is built with.]</p>
+            <a class="card-link" href="#">View project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">[ Project image ]</div>
+          <div class="card-body">
+            <h3>[Project name]</h3>
+            <p>[One or two lines: what it is, what you did, and what it is built with.]</p>
+            <a class="card-link" href="#">View project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">[ Project image ]</div>
+          <div class="card-body">
+            <h3>[Project name]</h3>
+            <p>[One or two lines: what it is, what you did, and what it is built with.]</p>
+            <a class="card-link" href="#">View project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">[ Project image ]</div>
+          <div class="card-body">
+            <h3>[Project name]</h3>
+            <p>[One or two lines: what it is, what you did, and what it is built with.]</p>
+            <a class="card-link" href="#">View project</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year"></span> Fynn [Last Name]</p>
+      <div class="footer-links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://github.com/yourusername">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

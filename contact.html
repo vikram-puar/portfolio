@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Fynn [Last Name]</title>
+
+  <!-- The Poppins font. Needs internet; falls back to a system font without it. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVIGATION ============
+       Keep identical across all five pages. -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="wordmark" href="index.html">Fynn [Last Name]</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CONTACT ============
+       Swap in your real email address (it appears twice below:
+       once in this section, once in the footer). -->
+  <section class="section">
+    <div class="wrap">
+      <h1 class="section-title page-title">Get in touch</h1>
+      <p class="section-sub">
+        [One friendly line, e.g. I am currently looking for (kind of role) and
+        always happy to talk. The fastest way to reach me is email.]
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="mailto:you@example.com">Email Me</a>
+        <a class="btn btn-outline" href="https://github.com/yourusername">GitHub</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+      <p class="fineprint">[Based in City, Country] &middot; [Open to remote / on-site / relocation]</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year"></span> Fynn [Last Name]</p>
+      <div class="footer-links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://github.com/yourusername">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
