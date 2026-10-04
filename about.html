@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Fynn [Last Name]</title>
+  <title>About - Vikram Puar</title>
+  <meta name="description" content="About Vikram Puar, a biomedical engineering student at Boston University from Pebble Beach, California.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <!-- The Poppins font. Needs internet; falls back to a system font without it. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +21,18 @@
        Keep identical across all five pages. -->
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="wordmark" href="index.html">Fynn [Last Name]</a>
+      <a class="wordmark" href="index.html">Vikram Puar</a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
-        <a href="about.html" class="active">About</a>
+        <a href="about.html" class="active" aria-current="page">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
+
+  <main>
 
   <!-- ============ PAGE TITLE ============ -->
   <section class="section">
@@ -38,25 +42,43 @@
   </section>
 
   <!-- ============ PHOTO + STORY ============
-       To use a real photo, replace the <div class="portrait"> line with:
-       <img class="portrait" src="images/portrait.jpg" alt="Photo of Fynn"> -->
+       To use a real photo, put it at images/portrait.jpg and replace
+       the <div class="portrait monogram"> line with:
+       <img class="portrait" src="images/portrait.jpg" alt="Photo of Vikram Puar"> -->
   <section class="section" style="padding-top: 0;">
     <div class="wrap about-grid">
 
-      <div class="portrait">[ Your photo ]</div>
+      <div class="portrait monogram" aria-hidden="true">VP</div>
 
       <div class="about-text">
         <p>
-          [Paragraph one: where you are from, what you do, and what you are
-          working towards right now.]
+          I'm Vikram Puar, a biomedical engineering student at Boston
+          University (Class of 2027), originally from Pebble Beach,
+          California.
         </p>
         <p>
-          [Paragraph two: how you got here. A short version of your path is
-          more memorable than a list of everything.]
+          Since May 2025 I've been an undergraduate research assistant in
+          BU's Neurovascular Imaging Laboratory, where I received a grant for
+          research on <em>in vivo</em> oxygen delivery in Alzheimer's mice
+          during sleep. I also develop MATLAB analysis code and automated our
+          data analysis, cutting processing time from 1 hour to under 15
+          minutes.
         </p>
         <p>
-          [Paragraph three: something human. What you do outside of work, what
-          you are curious about, or what kind of team you want to join.]
+          In spring 2026 I was an operations and engineering intern at
+          Houghton Chemical, doing quality control analysis and competitor
+          research. That summer I worked as a research technician at Active
+          Site in Cambridge, running cell culture, PCR, and transfection
+          workflows and designing primers for cloning and mutagenesis.
+        </p>
+        <p>
+          This year I'm a teaching assistant for Intro to Engineering,
+          helping students with CAD, 3D printing, and Arduino, and I'm working
+          with my senior design team on an autoinjector. Outside of
+          engineering I compete in tournaments with the BU Club Golf team
+          (single-digit handicap), and I served as VP of Engagement for
+          Kappa Theta Pi, planning networking events for up to 120 students
+          and alumni.
         </p>
       </div>
 
@@ -68,25 +90,54 @@
   <section class="section section-soft">
     <div class="wrap">
       <h2 class="section-title">Skills</h2>
-      <div class="tags">
-        <span>[Skill]</span>
-        <span>[Skill]</span>
-        <span>[Skill]</span>
-        <span>[Skill]</span>
-        <span>[Skill]</span>
-        <span>[Skill]</span>
+
+      <div class="skill-groups">
+        <div>
+          <h3>Software &amp; Tools</h3>
+          <div class="tags">
+            <span>MATLAB</span>
+            <span>Python</span>
+            <span>SolidWorks</span>
+            <span>LabVIEW</span>
+            <span>Arduino</span>
+          </div>
+        </div>
+        <div>
+          <h3>Lab Techniques</h3>
+          <div class="tags">
+            <span>Cell culture</span>
+            <span>PCR</span>
+            <span>Transfection</span>
+            <span>Primer design</span>
+            <span>Golden Gate assembly</span>
+            <span>Site-directed mutagenesis</span>
+            <span>Gas chromatography</span>
+          </div>
+        </div>
+        <div>
+          <h3>Design &amp; Fabrication</h3>
+          <div class="tags">
+            <span>CAD</span>
+            <span>Technical drawing</span>
+            <span>3D printing</span>
+            <span>Circuit design</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  </main>
+
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="wrap footer-inner">
-      <p>&copy; <span id="year"></span> Fynn [Last Name]</p>
+      <p>&copy; <span id="year"></span> Vikram Puar</p>
       <div class="footer-links">
-        <a href="mailto:you@example.com">Email</a>
-        <a href="https://github.com/yourusername">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+        <a href="mailto:vikramp@bu.edu">Email</a>
+        <a href="https://www.linkedin.com/in/vikram-puar/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Vikram-Puar-Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </div>
   </footer>

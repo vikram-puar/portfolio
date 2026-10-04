@@ -1,5 +1,5 @@
 /* ==============================================================
-   FYNN'S PORTFOLIO - SHARED STYLESHEET
+   VIKRAM PUAR PORTFOLIO - SHARED STYLESHEET
    Every page links to this one file, so a change here updates
    the whole site at once.
 
@@ -25,7 +25,7 @@
   --paper-soft: #f4f5f7;   /* light grey band behind some sections */
   --ink: #16171d;          /* headings, near-black */
   --body-text: #41434c;    /* paragraph text */
-  --muted: #6f727e;        /* secondary text */
+  --muted: #62656f;        /* secondary text */
   --navy: #1f2b4d;         /* buttons, links, highlights */
   --navy-dark: #141c33;    /* button hover + hero fallback colour */
   --line: #e6e7ec;         /* hairline borders */
@@ -36,9 +36,14 @@
 /* ---- 2. Base styles ---- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+/* scroll-padding keeps #anchor targets from hiding under the sticky nav. */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 body {
+  /* Column layout so the footer sits at the bottom on short pages. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
   background: var(--paper);
@@ -47,6 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+main { flex: 1; }
 img { display: block; max-width: 100%; }
 
 /* The centred column that most content sits inside. */
@@ -121,7 +127,9 @@ img { display: block; max-width: 100%; }
     linear-gradient(rgba(10, 14, 28, 0.55), rgba(10, 14, 28, 0.35)),
     url("images/banner.jpg");
   background-size: cover;
-  background-position: center;
+  /* Which part of the photo stays in view: "center 35%" keeps the
+     skyline and the rowers. Raise or lower the % to shift it. */
+  background-position: center 35%;
 }
 .hero .kicker {
   font-size: 0.95rem;
@@ -136,6 +144,12 @@ img { display: block; max-width: 100%; }
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
+}
+.hero .tagline {
+  margin-top: 14px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 500;
+  opacity: 0.92;
 }
 
 
@@ -245,9 +259,72 @@ img { display: block; max-width: 100%; }
   color: var(--muted);
   font-size: 0.9rem;
 }
+/* Cover tile used instead of a photo: navy gradient, line icon
+   and a short label. Swap in an <img class="thumb"> any time. */
+.thumb-art {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.14), transparent 45%),
+    linear-gradient(135deg, var(--navy) 0%, #34508f 100%);
+  color: #ffffff;
+  align-content: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.thumb-art svg { width: 64px; height: 64px; justify-self: center; opacity: 0.95; }
+
 .card-body { padding: 20px 22px 24px; }
-.card-body h3 { font-size: 1.12rem; font-weight: 700; }
+.card-body h2, .card-body h3 { font-size: 1.12rem; font-weight: 700; line-height: 1.4; }
 .card-body p { margin-top: 6px; color: var(--muted); font-size: 0.96rem; }
+.card-body .meta {
+  margin-top: 2px;
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.card-body ul {
+  margin-top: 10px;
+  padding-left: 18px;
+  color: var(--body-text);
+  font-size: 0.95rem;
+}
+.card-body li + li { margin-top: 4px; }
+
+/* Small tool/skill labels at the bottom of a project card. */
+.mini-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.mini-tags span {
+  background: var(--paper-soft);
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--body-text);
+}
+
+/* "Currently" row on the homepage. */
+.now-grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.now-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px 24px;
+}
+.now-item .label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.now-item h3 { margin-top: 8px; font-size: 1.05rem; font-weight: 700; line-height: 1.4; }
+.now-item p { margin-top: 6px; color: var(--muted); font-size: 0.93rem; }
 .card-link {
   display: inline-block;
   margin-top: 12px;
@@ -277,12 +354,15 @@ img { display: block; max-width: 100%; }
 .xp .dates { color: var(--navy); font-weight: 700; font-size: 0.95rem; }
 .xp .place { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
 .xp h3 { font-size: 1.12rem; font-weight: 700; }
+.xp .role { color: var(--muted); font-weight: 500; font-size: 0.98rem; }
 .xp .xp-body {
   margin-top: 6px;
   color: var(--body-text);
   font-size: 0.98rem;
   max-width: 62ch;
 }
+.xp ul.xp-body { padding-left: 18px; }
+.xp ul.xp-body li + li { margin-top: 4px; }
 
 
 /* ---- 9. About page ---- */
@@ -307,6 +387,14 @@ img { display: block; max-width: 100%; }
   color: var(--muted);
   font-size: 0.9rem;
 }
+/* Initials shown in the portrait slot until a real photo is added. */
+.monogram {
+  background: linear-gradient(160deg, var(--navy) 0%, #34508f 100%);
+  color: #ffffff;
+  font-size: clamp(4rem, 9vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
 .about-text p { color: var(--body-text); }
 .about-text p + p { margin-top: 16px; }
 
@@ -326,6 +414,28 @@ img { display: block; max-width: 100%; }
   padding: 8px 16px;
   font-size: 0.92rem;
 }
+
+/* Skills split into labelled groups on the About page. */
+.skill-groups {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.skill-groups h3 {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.skill-groups .tags { margin-top: 14px; }
+
+/* Email address written out under the contact buttons. */
+.email-line { margin-top: 18px; text-align: center; }
+.email-line a { color: var(--navy); font-weight: 600; text-decoration: none; }
+.email-line a:hover { text-decoration: underline; }
 
 /* Small centred note, used on the contact page. */
 .fineprint {
@@ -357,17 +467,23 @@ footer { border-top: 1px solid var(--line); margin-top: 40px; }
 :focus-visible {
   outline: 3px solid var(--navy);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 @media (max-width: 760px) {
   .section { padding: 56px 0; }
+  /* On phones the nav wraps to two rows, so it scrolls away
+     instead of sticking and covering the page. */
+  .topbar { position: static; }
   .topbar-inner { justify-content: center; }
+  .nav-links { justify-content: center; gap: 6px 20px; }
   .project-grid { grid-template-columns: 1fr; }
+  .now-grid { grid-template-columns: 1fr; gap: 14px; }
+  .skill-groups { grid-template-columns: 1fr; }
   .xp { grid-template-columns: 1fr; gap: 4px; padding: 22px 0; }
   .xp .place { margin-bottom: 8px; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
   .portrait { max-width: 340px; margin-inline: auto; }
+  .monogram { max-width: 200px; aspect-ratio: 1; font-size: 3.5rem; }
 }
 
 /* Respect people who prefer less motion. */
